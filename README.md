@@ -7,10 +7,14 @@
 **Completing various tasks will be faster, thanks to tiny versions of Minecraft commands.**  
 For example, you no longer need to write _**/time set day**_, this action will replace by the command _**/day**_.
 
+</div>
+
 ```
 Note: This is a client-side mod. 
 You do not need to install this on servers to use it.
 ```
+
+<div align="center">
 
 ---
 

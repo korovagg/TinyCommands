@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+bin/
+out/
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+
+# Minecraft Modding
+run/
+.fabric/
+loom-cache/
+userdev/
+gradle.properties.bak
+*.at
+*.accesswidener.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log

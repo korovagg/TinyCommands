@@ -7,8 +7,8 @@
   "authors": ["KoroWin"],
   "contact": {
     "homepage": "https://modrinth.com/mod/tinycommands",
-    "sources": "https://github.com/KoroWin/TinyCommands",
-    "issues": "https://github.com/KoroWin/TinyCommands/issues"
+    "sources": "https://github.com/korovagg/TinyCommands",
+    "issues": "https://github.com/korovagg/TinyCommands/issues"
   },
   "license": "MIT",
   "icon": "assets/tinycommands/icon.png",

@@ -10,8 +10,7 @@ For example, you no longer need to write _**/time set day**_, this action will r
 </div>
 
 ```
-Note: This is a client-side mod. 
-You do not need to install this on servers to use it.
+Note: This is a client-side mod. You do not need to install this on servers to use it.
 ```
 
 <div align="center">

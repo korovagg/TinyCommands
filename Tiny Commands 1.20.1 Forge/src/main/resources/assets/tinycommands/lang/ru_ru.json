@@ -1,0 +1,14 @@
+{
+  "modmenu.description.tinycommands": "Добавляет сокращенные версии команд Minecraft.",
+  "text.autoconfig.tinycommands.title": "Настройки Tiny Commands",
+  "text.autoconfig.tinycommands.option.enableTimeCommands": "Команды времени (/day, /night и т.д.)",
+  "text.autoconfig.tinycommands.option.enableWeatherCommands": "Команды погоды (/sun, /wtr и т.д.)",
+  "text.autoconfig.tinycommands.option.enableGamemodeCommands": "Команды режимов игры (/gm)",
+  "text.autoconfig.tinycommands.option.enableDifficultyCommands": "Команды сложности (/diff)",
+  "text.autoconfig.tinycommands.option.enableSpawnpointCommand": "Команда точки спавна (/sp)",
+  "text.autoconfig.tinycommands.option.enableHealFeedCommands": "Команды /heal и /feed",
+  "text.autoconfig.tinycommands.option.enableGameruleCommand": "Команда игровых правил (/gr)",
+  "text.autoconfig.tinycommands.option.enableNightVisionCommand": "Команда ночного зрения (/nv)",
+  "text.autoconfig.tinycommands.option.enableEffectClearCommand": "Команда очистки эффектов (/eclear)",
+  "text.autoconfig.tinycommands.option.enableTpHereCommand": "Команда телепорта к себе (/tphere)"
+}

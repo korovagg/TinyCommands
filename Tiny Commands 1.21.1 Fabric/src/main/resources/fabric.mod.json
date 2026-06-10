@@ -3,8 +3,10 @@
   "id": "tinycommands",
   "version": "${version}",
   "name": "Tiny Commands",
-  "description": "Аdds tiny versions of Minecraft commands.",
-  "authors": ["KoroWin"],
+  "description": "Adds tiny versions of Minecraft commands.",
+  "authors": [
+    "KoroWin"
+  ],
   "contact": {
     "homepage": "https://modrinth.com/mod/tinycommands",
     "sources": "https://github.com/korovagg/TinyCommands",

@@ -131,6 +131,7 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    // Put repositories {
     // Put repositories for dependencies here
     maven { url 'https://maven.shedaniel.me/' }
 }

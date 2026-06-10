@@ -1,0 +1,14 @@
+{
+  "modmenu.description.tinycommands": "Adds tiny versions of Minecraft commands.",
+  "text.autoconfig.tinycommands.title": "Tiny Commands Settings",
+  "text.autoconfig.tinycommands.option.enableTimeCommands": "Enable Time Commands (/day, /night, etc.)",
+  "text.autoconfig.tinycommands.option.enableWeatherCommands": "Enable Weather Commands (/sun, /wtr, etc.)",
+  "text.autoconfig.tinycommands.option.enableGamemodeCommands": "Enable Gamemode Commands (/gm)",
+  "text.autoconfig.tinycommands.option.enableDifficultyCommands": "Enable Difficulty Commands (/diff)",
+  "text.autoconfig.tinycommands.option.enableSpawnpointCommand": "Enable Spawnpoint Command (/sp)",
+  "text.autoconfig.tinycommands.option.enableHealFeedCommands": "Enable Heal & Feed Commands (/heal, /feed)",
+  "text.autoconfig.tinycommands.option.enableGameruleCommand": "Enable Gamerule Command (/gr)",
+  "text.autoconfig.tinycommands.option.enableNightVisionCommand": "Enable Night Vision Command (/nv)",
+  "text.autoconfig.tinycommands.option.enableEffectClearCommand": "Enable Effect Clear Command (/eclear)",
+  "text.autoconfig.tinycommands.option.enableTpHereCommand": "Enable TP Here Command (/tphere)"
+}

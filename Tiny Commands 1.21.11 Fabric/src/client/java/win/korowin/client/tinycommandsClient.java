@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.command.argument.EntityArgumentType;
 import win.korowin.tinycommands;
 import win.korowin.config.TinyCommandsConfig;
 
@@ -78,28 +79,28 @@ public class tinycommandsClient implements ClientModInitializer {
                 var grNode = ClientCommandManager.literal("gr");
                 
                 grNode.then(ClientCommandManager.literal("keepinv")
-                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule keepInventory true"); return 1; }))
-                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule keepInventory true"); return 1; }))
-                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule keepInventory false"); return 1; }))
-                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule keepInventory false"); return 1; })));
+                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule keep_inventory true"); return 1; }))
+                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule keep_inventory true"); return 1; }))
+                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule keep_inventory false"); return 1; }))
+                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule keep_inventory false"); return 1; })));
 
                 grNode.then(ClientCommandManager.literal("day")
-                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule doDaylightCycle true"); return 1; }))
-                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule doDaylightCycle true"); return 1; }))
-                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule doDaylightCycle false"); return 1; }))
-                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule doDaylightCycle false"); return 1; })));
+                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule advance_time true"); return 1; }))
+                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule advance_time true"); return 1; }))
+                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule advance_time false"); return 1; }))
+                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule advance_time false"); return 1; })));
 
                 grNode.then(ClientCommandManager.literal("wtr")
-                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule doWeatherCycle true"); return 1; }))
-                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule doWeatherCycle true"); return 1; }))
-                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule doWeatherCycle false"); return 1; }))
-                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule doWeatherCycle false"); return 1; })));
+                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule advance_weather true"); return 1; }))
+                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule advance_weather true"); return 1; }))
+                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule advance_weather false"); return 1; }))
+                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule advance_weather false"); return 1; })));
 
                 grNode.then(ClientCommandManager.literal("rts")
                         .then(ClientCommandManager.argument("value", IntegerArgumentType.integer(0))
                                 .executes(context -> {
                                     int val = IntegerArgumentType.getInteger(context, "value");
-                                    executeCommand("gamerule randomTickSpeed " + val);
+                                    executeCommand("gamerule random_tick_speed " + val);
                                     return 1;
                                 })));
 
@@ -110,10 +111,10 @@ public class tinycommandsClient implements ClientModInitializer {
                         .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule pvp false"); return 1; })));
 
                 grNode.then(ClientCommandManager.literal("grief")
-                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule mobGriefing true"); return 1; }))
-                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule mobGriefing true"); return 1; }))
-                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule mobGriefing false"); return 1; }))
-                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule mobGriefing false"); return 1; })));
+                        .then(ClientCommandManager.literal("true").executes(context -> { executeCommand("gamerule mob_griefing true"); return 1; }))
+                        .then(ClientCommandManager.literal("t").executes(context -> { executeCommand("gamerule mob_griefing true"); return 1; }))
+                        .then(ClientCommandManager.literal("false").executes(context -> { executeCommand("gamerule mob_griefing false"); return 1; }))
+                        .then(ClientCommandManager.literal("f").executes(context -> { executeCommand("gamerule mob_griefing false"); return 1; })));
 
                 dispatcher.register(grNode);
             }
@@ -139,9 +140,9 @@ public class tinycommandsClient implements ClientModInitializer {
             // TP Here (/tphere)
             if (config.enableTpHereCommand) {
                 dispatcher.register(ClientCommandManager.literal("tphere")
-                        .then(ClientCommandManager.argument("player", StringArgumentType.word())
+                        .then(ClientCommandManager.argument("player", EntityArgumentType.player())
                                 .executes(context -> {
-                                    String target = StringArgumentType.getString(context, "player");
+                                    String target = context.getInput().split(" ")[1];
                                     executeCommand("tp " + target + " @s");
                                     return 1;
                                 })));

@@ -45,14 +45,14 @@ Note: This is a client-side mod. You do not need to install this on servers to u
 
 ## ⚙️ Gamerule Shortcuts
 
-| Tiny commands | Standard commands |
-| :---: | :--- |
-| **/gr keepinv [t/f]** | /gamerule keepInventory [true/false] |
-| **/gr day [t/f]** | /gamerule doDaylightCycle [true/false] |
-| **/gr wtr [t/f]** | /gamerule doWeatherCycle [true/false] |
-| **/gr pvp [t/f]** | /gamerule pvp [true/false] |
-| **/gr grief [t/f]** | /gamerule mobGriefing [true/false] |
-| **/gr rts [number]** | /gamerule randomTickSpeed [number] |
+| Tiny commands     |Standard commands                      |
+| ----------------- |-------------------------------------- |
+| <strong>/gr keepinv [t/f]</strong> |/gamerule keep_inventory [true/false]   |
+| <strong>/gr day [t/f]</strong> |/gamerule advance_time [true/false] |
+| <strong>/gr wtr [t/f]</strong> |/gamerule advance_weather [true/false]  |
+| <strong>/gr pvp [t/f]</strong> |/gamerule pvp [true/false]             |
+| <strong>/gr grief [t/f]</strong> |/gamerule mob_griefing [true/false]     |
+| <strong>/gr rts [number]</strong> |/gamerule random_tick_speed [number]     |
 
 ---
 

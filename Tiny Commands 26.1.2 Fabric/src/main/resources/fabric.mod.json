@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "tinycommands",
+  "version": "${version}",
+  "name": "Tiny Commands",
+  "description": "Adds tiny versions of Minecraft commands.",
+  "authors": [
+    "KoroWin"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/tinycommands",
+    "sources": "https://github.com/korovagg/TinyCommands",
+    "issues": "https://github.com/korovagg/TinyCommands/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/tinycommands/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "win.korowin.client.tinycommandsDataGenerator"
+    ],
+    "client": [
+      "win.korowin.client.tinycommandsClient"
+    ],
+    "main": [
+      "win.korowin.tinycommands"
+    ],
+    "modmenu": [
+      "win.korowin.client.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "tinycommands.mixins.json",
+    {
+      "config": "tinycommands.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "cloth-config2": "*",
+    "modmenu": "*"
+  }
+}

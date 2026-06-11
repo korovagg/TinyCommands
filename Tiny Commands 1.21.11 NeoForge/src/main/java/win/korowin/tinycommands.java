@@ -2,6 +2,7 @@ package win.korowin;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import net.minecraft.commands.arguments.EntityArgument;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.AutoConfigClient;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
@@ -111,28 +112,28 @@ public class tinycommands {
             var grNode = net.minecraft.commands.Commands.literal("gr");
             
             grNode.then(net.minecraft.commands.Commands.literal("keepinv")
-                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule keepInventory true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule keepInventory true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule keepInventory false"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule keepInventory false"); return 1; })));
+                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule keep_inventory true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule keep_inventory true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule keep_inventory false"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule keep_inventory false"); return 1; })));
 
             grNode.then(net.minecraft.commands.Commands.literal("day")
-                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule doDaylightCycle true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule doDaylightCycle true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule doDaylightCycle false"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule doDaylightCycle false"); return 1; })));
+                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule advance_time true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule advance_time true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule advance_time false"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule advance_time false"); return 1; })));
 
             grNode.then(net.minecraft.commands.Commands.literal("wtr")
-                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule doWeatherCycle true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule doWeatherCycle true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule doWeatherCycle false"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule doWeatherCycle false"); return 1; })));
+                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule advance_weather true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule advance_weather true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule advance_weather false"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule advance_weather false"); return 1; })));
 
             grNode.then(net.minecraft.commands.Commands.literal("rts")
                     .then(net.minecraft.commands.Commands.argument("value", IntegerArgumentType.integer(0))
                             .executes(context -> {
                                 int val = IntegerArgumentType.getInteger(context, "value");
-                                executeCommand("gamerule randomTickSpeed " + val);
+                                executeCommand("gamerule random_tick_speed " + val);
                                 return 1;
                             })));
 
@@ -143,10 +144,10 @@ public class tinycommands {
                     .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule pvp false"); return 1; })));
 
             grNode.then(net.minecraft.commands.Commands.literal("grief")
-                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule mobGriefing true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule mobGriefing true"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule mobGriefing false"); return 1; }))
-                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule mobGriefing false"); return 1; })));
+                    .then(net.minecraft.commands.Commands.literal("true").executes(context -> { executeCommand("gamerule mob_griefing true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("t").executes(context -> { executeCommand("gamerule mob_griefing true"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("false").executes(context -> { executeCommand("gamerule mob_griefing false"); return 1; }))
+                    .then(net.minecraft.commands.Commands.literal("f").executes(context -> { executeCommand("gamerule mob_griefing false"); return 1; })));
 
             dispatcher.register(grNode);
         }
@@ -172,9 +173,9 @@ public class tinycommands {
         // TP Here (/tphere)
         if (config.enableTpHereCommand) {
             dispatcher.register(net.minecraft.commands.Commands.literal("tphere")
-                    .then(net.minecraft.commands.Commands.argument("player", StringArgumentType.word())
+                    .then(net.minecraft.commands.Commands.argument("player", EntityArgument.player())
                             .executes(context -> {
-                                String target = StringArgumentType.getString(context, "player");
+                                String target = context.getInput().split(" ")[1];
                                 executeCommand("tp " + target + " @s");
                                 return 1;
                             })));

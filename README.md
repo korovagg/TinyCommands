@@ -56,12 +56,12 @@ Note: This is a client-side mod. You do not need to install this on servers to u
 
 | Tiny commands | Standard commands |
 | :---: | :---: |
-| **/gr keepinv [t/f]** | /gamerule keepInventory [true/false] |
-| **/gr day [t/f]** | /gamerule doDaylightCycle [true/false] |
-| **/gr wtr [t/f]** | /gamerule doWeatherCycle [true/false] |
+| **/gr keepinv [t/f]** | /gamerule keep_inventory [true/false] |
+| **/gr day [t/f]** | /gamerule advance_time [true/false] |
+| **/gr wtr [t/f]** | /gamerule advance_weather [true/false] |
 | **/gr pvp [t/f]** | /gamerule pvp [true/false] |
-| **/gr grief [t/f]** | /gamerule mobGriefing [true/false] |
-| **/gr rts [number]** | /gamerule randomTickSpeed [number] |
+| **/gr grief [t/f]** | /gamerule mob_griefing [true/false] |
+| **/gr rts [number]** | /gamerule random_tick_speed [number] |
 
 ---
 

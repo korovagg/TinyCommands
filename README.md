@@ -64,7 +64,9 @@ Note: This is a client-side mod. You do not need to install this on servers to u
 | **/gr rts [number]** | /gamerule random_tick_speed [number] |
 
 ---
+<center>
 
+[![Support my mods on Ko-fi!](https://i.ibb.co/kg627r0J/ko-fi.png)](https://ko-fi.com/korovagg)
 [![CurseForge](https://i.ibb.co/57rNyyy/image.png)](https://www.curseforge.com/minecraft/mc-mods/tinycommands) [![Modrinth](https://i.ibb.co/TqwWmF06/1.png)](https://modrinth.com/mod/tinycommands)
 
 </div>
